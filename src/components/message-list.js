@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ErrorGrid from './ErrorGrid';
 import Button from '@material-ui/core/Button'
 import Api from '../api'
 
@@ -53,9 +54,11 @@ class MessageList extends Component {
   }
 
   render() {
+    const { messages } = this.state
     return (
       <div>
         {this.renderButton()}
+        <ErrorGrid messages={messages} priorities={[1,2,3]}/>
       </div>
     )
   }
