@@ -4,24 +4,19 @@ import Button from '@material-ui/core/Button'
 import Api from '../api'
 
 export default function MessageList(){
-  const [message, setMessage] = React.useState(null);
-
-   const api = new Api({
+  const [message, setMessage] = React.useState(null);   
+  const [isApiStarted, setIsApiStarted] = React.useState(true);   
+  const [api, setApi] = React.useState(new Api({
     messageCallback: (message) => {
-      messageCallback(message)
+      setMessage(message);
+    
     },
-  })
-
+  }));   
   React.useEffect(() => {
     api.start();
-  })
+  },[api])
 
-  const messageCallback = (message) => {
-    setMessage(message);
-  }
-
-  const renderButton = () => {
-    const isApiStarted = api.isStarted();
+ const renderButton = () => {
     return (
       <Button
         variant="contained"
@@ -31,7 +26,7 @@ export default function MessageList(){
           } else {
             api.start()
           }
-           setMessage(message);
+           setIsApiStarted(!isApiStarted);
         }}
       >
         {isApiStarted ? 'Stop Messages' : 'Start Messages'}
@@ -43,7 +38,8 @@ export default function MessageList(){
     return (
       <div>
         {renderButton()}
-        {message ? <ErrorGrid message={message} priorities={[{label:'Error', value:1},{label:'Warning', value:2}, {label: 'Info', value: 3}]}/> : null }
+        {message ? (<ErrorGrid message={message} priorities={[{label:'Error', value:1},{label:'Warning', value:2}, {label: 'Info', value: 3}]}/>) :null }
+        
       </div>
     )
   

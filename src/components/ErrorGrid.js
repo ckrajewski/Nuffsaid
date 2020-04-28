@@ -10,11 +10,9 @@ export default function ErrorGrid(props) {
     	priorities.reduce((filteredMessages,priority) => {
     		filteredMessages[priority.value]=[];
     		return filteredMessages;
-    	},{})));
+    	},{lastMessage:{}})));
     	
     const createFilteredMessages = () => {
-    	let test = Object.assign(filteredMessages,
-    		{[priority] : [message, ...filteredMessages[priority].slice()]})
     	setFilteredMessages(Object.assign(filteredMessages,
     		{[priority] : [message, ...filteredMessages[priority].slice()],
     			lastMessage : message}));
@@ -29,7 +27,7 @@ export default function ErrorGrid(props) {
   }
   return true;
 }
-	if(!filteredMessages.lastMessage || !isSameMessage()) {
+	if(!isSameMessage()) {
 		createFilteredMessages();
 	}
 	debugger;
