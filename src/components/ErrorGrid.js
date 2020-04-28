@@ -11,28 +11,16 @@ export default function ErrorGrid(props) {
     		filteredMessages[priority.value]=[];
     		return filteredMessages;
     	},{lastMessage:{}})));
-    	
-    const createFilteredMessages = () => {
-    	setFilteredMessages(Object.assign(filteredMessages,
+     React.useEffect(() => {
+     	setFilteredMessages(Object.assign(filteredMessages,
     		{[priority] : [message, ...filteredMessages[priority].slice()],
     			lastMessage : message}));
-    } 
-    const isSameMessage = () => {
-  const messageKeys = Object.keys(message);
-  for (const index in messageKeys) {
-    const key = messageKeys[index];
-    if (message[key] !== filteredMessages.lastMessage[key]) {
-      return false;
-    }
-  }
-  return true;
-}
-	if(!isSameMessage()) {
-		createFilteredMessages();
-	}
+     },[message]);
+    
+   
 	debugger;
 	return(
-		<div style={{width:'70%', margin:'auto'}}>
+		<div>
 		<Grid container spacing={3} justify="center">
 			{
 				
