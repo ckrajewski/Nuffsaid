@@ -1,65 +1,52 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Message from './Message';
-import Paper from '@material-ui/core/Paper';
+import Column from './Column';
 import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-}));
 
 export default function ErrorGrid(props) {
-	const {messages, priorities} = props;
-    const [filteredMessages, setFilteredMessages] = React.useState(() => {
-    	const fm = priorities.reduce((filteredMessages,priority) => {
-    		filteredMessages[priority]=[];
+	const {message, priorities} = props;
+	const {priority} = message;
+    const [filteredMessages, setFilteredMessages] = React.useState(() => (
+    	priorities.reduce((filteredMessages,priority) => {
+    		filteredMessages[priority.value]=[];
     		return filteredMessages;
-    	},{});
-    	return {messages: fm, messagesLength: 0};
-    });
-    const lastMessage = messages[messages.length - 1];
+    	},{})));
+    	
     const createFilteredMessages = () => {
-    	const { message, priority} = lastMessage;
-    	let filteredMessagesDeepCopy = {...filteredMessages.messages};
-    	if(!filteredMessagesDeepCopy.hasOwnProperty(priority)) {
-    		filteredMessagesDeepCopy[priority] = [];
-    	}
-    	filteredMessagesDeepCopy[priority].push(message);
-    	setFilteredMessages((prevState => {
-    		return ( {
-    			...prevState,
-    			messages: filteredMessagesDeepCopy,
-    			messagesLength: ++prevState.messagesLength
-    		})
-    	}),);
+    	let test = Object.assign(filteredMessages,
+    		{[priority] : [message, ...filteredMessages[priority].slice()]})
+    	setFilteredMessages(Object.assign(filteredMessages,
+    		{[priority] : [message, ...filteredMessages[priority].slice()],
+    			lastMessage : message}));
     } 
-	debugger;
-	if(messages.length > filteredMessages.messagesLength) {
+    const isSameMessage = () => {
+  const messageKeys = Object.keys(message);
+  for (const index in messageKeys) {
+    const key = messageKeys[index];
+    if (message[key] !== filteredMessages.lastMessage[key]) {
+      return false;
+    }
+  }
+  return true;
+}
+	if(!filteredMessages.lastMessage || !isSameMessage()) {
 		createFilteredMessages();
 	}
-	const classes = useStyles();
+	debugger;
 	return(
-		<div>
-		<Grid container spacing={3}>
+		<div style={{width:'70%', margin:'auto'}}>
+		<Grid container spacing={3} justify="center">
 			{
 				
-				priorities.map(priority => (
-						<Grid xs={Math.floor(12/priorities.length)}>
-						{filteredMessages.messages[priority].map(message =>(
-							<Message priority={priority} message={message} />
-							))
-					}</Grid>
+				priorities.map((priority,index) => (
+						<Grid item xs={Math.floor(12/priorities.length)} key={priority.value}>
+						
+							<Column priority={priority} messages={filteredMessages[priority.value]} title={priority.label} />
+						</Grid>
 
 					))
 				}
-			}
+			
         </Grid>
         
          </div>

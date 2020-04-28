@@ -12,6 +12,7 @@
   "license": "No license",
   "dependencies": {
     "@material-ui/core": "^4.0.0",
+    "aphrodite": "^2.4.0",
     "chance": "^0.8.0",
     "lodash": "^4.17.15",
     "prop-types": "^15.5.8",

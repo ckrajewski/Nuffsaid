@@ -1,51 +1,37 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ErrorGrid from './ErrorGrid';
 import Button from '@material-ui/core/Button'
 import Api from '../api'
 
-class MessageList extends Component {
-  constructor(...args) {
-    super(...args)
-    this.state = {
-      messages: [],
-    }
-  }
+export default function MessageList(){
+  const [message, setMessage] = React.useState(null);
 
-  api = new Api({
+   const api = new Api({
     messageCallback: (message) => {
-      this.messageCallback(message)
+      messageCallback(message)
     },
   })
 
-  componentDidMount() {
-    this.api.start()
+  React.useEffect(() => {
+    api.start();
+  })
+
+  const messageCallback = (message) => {
+    setMessage(message);
   }
 
-  messageCallback(message) {
-    const { messages } = this.state
-    this.setState({
-      messages: [
-        ...messages.slice(),
-        message,
-      ],
-    }, () => {
-      // Included to support initial direction. Please remove upon completion
-      console.log(messages)
-    })
-  }
-
-  renderButton() {
-    const isApiStarted = this.api.isStarted()
+  const renderButton = () => {
+    const isApiStarted = api.isStarted();
     return (
       <Button
         variant="contained"
         onClick={() => {
           if (isApiStarted) {
-            this.api.stop()
+            api.stop()
           } else {
-            this.api.start()
+            api.start()
           }
-          this.forceUpdate()
+           setMessage(message);
         }}
       >
         {isApiStarted ? 'Stop Messages' : 'Start Messages'}
@@ -53,15 +39,12 @@ class MessageList extends Component {
     )
   }
 
-  render() {
-    const { messages } = this.state
+
     return (
       <div>
-        {this.renderButton()}
-        <ErrorGrid messages={messages} priorities={[1,2,3]}/>
+        {renderButton()}
+        {message ? <ErrorGrid message={message} priorities={[{label:'Error', value:1},{label:'Warning', value:2}, {label: 'Info', value: 3}]}/> : null }
       </div>
     )
-  }
+  
 }
-
-export default MessageList
