@@ -10,6 +10,7 @@ export default function ColumnTitle(props) {
           {priorityLabel}
           {' '}
           Type
+          {' '}
           {priorityValue}
         </Typography>
       </div>
