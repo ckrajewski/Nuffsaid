@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Column from './Column';
 
-export default function ErrorGrid(props) {
+export default function MessageGrid(props) {
   const { message, priorities, setClear } = props;
   const { priority } = message;
 

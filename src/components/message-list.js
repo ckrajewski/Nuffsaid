@@ -6,7 +6,7 @@ import { grey } from '@material-ui/core/colors';
 import { makeStyles } from '@material-ui/core/styles';
 import Api from '../api';
 import ErrorMessage from './ErrorMessage';
-import ErrorGrid from './ErrorGrid';
+import MessageGrid from './MessageGrid';
 
 const useStyles = makeStyles({
   button: {
@@ -82,7 +82,7 @@ export default function MessageList() {
               </Button>
             </Grid>
           </Grid>
-          {message ? (<ErrorGrid setClear={(click) => { clickClear = click; }} message={message} priorities={[{ label: 'Error', value: 1 }, { label: 'Warning', value: 2 }, { label: 'Info', value: 3 }]} />) : null }
+          {message ? (<MessageGrid setClear={(click) => { clickClear = click; }} message={message} priorities={[{ label: 'Error', value: 1 }, { label: 'Warning', value: 2 }, { label: 'Info', value: 3 }]} />) : null }
         </div>
       </div>
     </div>
