@@ -3,7 +3,6 @@ import { Typography } from '@material-ui/core';
 
 export default function ColumnTitle(props) {
 	const {priorityLabel, priorityValue, messageCount} = props;
-	debugger;
 	return(
 		<div>
 			<div>

@@ -30,8 +30,7 @@ const messageThemes = {
 }
 
 export default function Message(props) {
-	const {message, priority} = props;
-	debugger;
+	const {message, priority, clearMessage} = props;
 	return (
 <div> 
 
@@ -45,8 +44,8 @@ export default function Message(props) {
 <Grid item className={css(styles.message)}>
 {message}
 </Grid>
-<Grid item className={css(styles.clear)}>
-Clear
+<Grid item className={css(styles.clear)} >
+<div onClick={(event) => {event.stopPropagation(); debugger; clearMessage()}}>Clear</div>
 </Grid>
 </Grid>
 </Paper>

@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
       borderTop: 'solid 1px',
     }
   });  
-
+let clickClear;
 export default function MessageList(){
   const [message, setMessage] = React.useState(null);   
   const [isApiStarted, setIsApiStarted] = React.useState(true);   
@@ -48,7 +48,6 @@ export default function MessageList(){
            setIsApiStarted(!isApiStarted);
   }
 
-
     return (
       <div className={css(styles.header)}>
       <div className={css(styles.container)}>
@@ -60,21 +59,22 @@ export default function MessageList(){
         className={css(styles.button)}
         onClick={handleApiButton}>
                 <Typography variant="body1" className={css(styles.button)}>
-        {isApiStarted ? 'Start' : 'Stop'}
+        {isApiStarted ? 'Stop' : 'Start'}
         </Typography>
         </Button>
         </Grid>
         <Grid item>
         <Button
         className={css(styles.button)}
-        variant="contained">
+        variant="contained"
+        onClick={() => clickClear()}>
         <Typography variant="body1" className={css(styles.button)}>
         Clear
         </Typography>
         </Button>
         </Grid>
         </Grid>
-        {message ? (<ErrorGrid message={message} priorities={[{label:'Error', value:1},{label:'Warning', value:2}, {label: 'Info', value: 3}]}/>) :null }
+        {message ? (<ErrorGrid setClear={click => clickClear = click} message={message} priorities={[{label:'Error', value:1},{label:'Warning', value:2}, {label: 'Info', value: 3}]}/>) :null }
         
       </div>
       </div>

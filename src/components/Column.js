@@ -3,14 +3,13 @@ import Message from './Message';
 import ColumnTitle from './ColumnTitle';
 
 export default function Column(props) {
-	const {messages, priority} = props;
+	const {messages, priority, clearMessage} = props;
 	const {value, label} = priority;
-	debugger;
 	return(
 		<div>
 		<ColumnTitle priorityLabel={label} priorityValue={value} messageCount={messages.length}/>
-		{messages.map(message =>(
-							<Message priority={value} message={message.message} key={ value + message.message} />
+		{messages.map((message,index) =>(
+							<Message clearMessage={() => clearMessage(value,index)} priority={value} message={message.message} />
 							))
 	}
 		</div>
