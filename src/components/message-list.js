@@ -11,15 +11,20 @@ import ErrorGrid from './ErrorGrid';
 const useStyles = makeStyles({
   button: {
     backgroundColor: '#88FCA3',
+    lineHeight: '2rem',
+  },
+  buttonFont: {
     textTransform: 'uppercase',
     fontWeight: 'bold',
+    paddingLeft: '2em',
+    paddingRight: '2em',
   },
   container: {
-    width: '70%',
+    width: '75%',
     margin: 'auto',
   },
   buttonContainer: {
-    marginBottom: '8%',
+    marginBottom: '5.5%',
     marginTop: '0.25%',
   },
   header: {
@@ -60,9 +65,8 @@ export default function MessageList() {
               <Button
                 variant="contained"
                 className={classes.button}
-                onClick={handleApiButton}
-              >
-                <Typography variant="body1" className={classes.button}>
+                onClick={handleApiButton}>
+                <Typography variant="body1" className={classes.buttonFont}>
                   {isApiStarted ? 'Stop' : 'Start'}
                 </Typography>
               </Button>
@@ -71,9 +75,8 @@ export default function MessageList() {
               <Button
                 className={classes.button}
                 variant="contained"
-                onClick={() => clickClear()}
-              >
-                <Typography variant="body1" className={classes.button}>
+                onClick={() => clickClear()}>
+                <Typography variant="body1" className={classes.buttonFont}>
                   Clear
                 </Typography>
               </Button>

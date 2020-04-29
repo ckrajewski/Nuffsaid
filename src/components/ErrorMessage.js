@@ -8,6 +8,7 @@ const useStyles = makeStyles({
     paddingLeft: '3%',
     paddingRight: '8%',
     height: '3em',
+    backgroundColor: '#F56236',
   },
   container: {
     width: '40%',
@@ -24,11 +25,6 @@ const useStyles = makeStyles({
     height: '100%',
   },
 });
-const messageThemes = {
-  1: '#F56236',
-  2: '#FCE788',
-  3: '#88FCA3',
-};
 
 export default function ErrorMessage(props) {
   const [errorObj, setErrorObj] = useState({ timeOutId: null, errorMessage: null });
@@ -59,15 +55,12 @@ export default function ErrorMessage(props) {
     <div className={classes.container} style={{ visibility: errorMessage ? 'initial' : 'hidden' }}>
       <Paper
         elevation={5}
-        className={classes.paper}
-        style={{ backgroundColor: messageThemes[1] }}
-      >
+        className={classes.paper}>
         <Grid
           container
           direction="row"
           alignItems="center"
-          className={classes.grid}
-        >
+          className={classes.grid}>
           <Grid item>
             <IconButton onClick={clearMessage}>
               <CloseIcon />

@@ -38,7 +38,7 @@ export default function ErrorGrid(props) {
 
   return (
     <div>
-      <Grid container spacing={3} justify="center">
+      <Grid container spacing={2} justify="center">
         {
             priorities.map((priority) => (
               <Grid item xs={Math.floor(12 / priorities.length)} key={priority.value}>
