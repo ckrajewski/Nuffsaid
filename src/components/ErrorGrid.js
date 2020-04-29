@@ -21,7 +21,7 @@ export default function ErrorGrid(props) {
     });
   }, [message]);
 
-  const handleClearAll = () => initializeFilteredMessages();
+  const handleClearAll = () => setFilteredMessages(initializeFilteredMessages());
 
   useEffect(() => {
     setClear(handleClearAll);

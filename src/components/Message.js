@@ -1,9 +1,18 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import {
+  Typography, Paper, Grid, Button,
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+  button: {
+    textTransform: 'none',
+  },
   paper: {
     paddingLeft: '3%',
     paddingRight: '8%',
@@ -20,7 +29,7 @@ const useStyles = makeStyles({
   grid: {
     height: '100%',
   },
-});
+}));
 const messageThemes = {
   1: '#F56236',
   2: '#FCE788',
@@ -41,17 +50,21 @@ export default function Message(props) {
       <Paper
         elevation={5}
         className={classes.paper}
-        style={{ backgroundColor: messageThemes[priority] }}>
+        style={{ backgroundColor: messageThemes[priority] }}
+      >
         <Grid
           container
           direction="row"
           justify="space-between"
-          className={classes.grid}>
+          className={classes.grid}
+        >
           <Grid item className={classes.message}>
-            {message}
+            <Typography variant="body1">
+              {message}
+            </Typography>
           </Grid>
           <Grid item className={classes.clear}>
-            <div onClick={handleClearMessage}>Clear</div>
+            <Button className={classes.button} onClick={handleClearMessage}>Clear</Button>
           </Grid>
         </Grid>
       </Paper>

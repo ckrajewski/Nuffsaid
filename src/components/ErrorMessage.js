@@ -31,15 +31,15 @@ const messageThemes = {
 };
 
 export default function ErrorMessage(props) {
-  const [errorObj, setErrorObj] = useState({ showError: false, timeOutId: null });
-  const { showError, timeOutId } = errorObj;
+  const [errorObj, setErrorObj] = useState({ timeOutId: null, errorMessage: null });
+  const { errorMessage, timeOutId } = errorObj;
   const { message } = props;
   const clearMessage = (event) => {
     event.stopPropagation();
-    setErrorObj({ showError: false, timeOutId: null });
+    setErrorObj({ timeOutId: null, errorMessage: null });
   };
   const showErrorForTwoSeconds = () => (setTimeout(() => {
-    setErrorObj({ showError: false, timeOutId: null });
+    setErrorObj({ timeOutId: null, errorMessage: null });
   }, 2000));
   useEffect(() => {
     if (message) {
@@ -48,9 +48,7 @@ export default function ErrorMessage(props) {
         if (timeOutId) {
           clearTimeout(timeOutId);
         }
-        setErrorObj({ showError: true, timeOutId: showErrorForTwoSeconds() });
-      } else if (showError && timeOutId === null) {
-        setErrorObj({ showError: false, timeOutId: null });
+        setErrorObj({ errorMessage: message.message, timeOutId: showErrorForTwoSeconds() });
       }
     }
   }, [message]);
@@ -58,23 +56,25 @@ export default function ErrorMessage(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.container} style={{ visibility: showError ? 'initial' : 'hidden' }}>
+    <div className={classes.container} style={{ visibility: errorMessage ? 'initial' : 'hidden' }}>
       <Paper
         elevation={5}
         className={classes.paper}
-        style={{ backgroundColor: messageThemes[1] }}>
+        style={{ backgroundColor: messageThemes[1] }}
+      >
         <Grid
           container
           direction="row"
           alignItems="center"
-          className={classes.grid}>
+          className={classes.grid}
+        >
           <Grid item>
             <IconButton onClick={clearMessage}>
               <CloseIcon />
             </IconButton>
           </Grid>
           <Grid item>
-            {message ? message.message : null}
+            {errorMessage}
           </Grid>
         </Grid>
       </Paper>
