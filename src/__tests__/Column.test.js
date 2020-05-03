@@ -7,7 +7,7 @@ import renderer from 'react-test-renderer';
 configure({ adapter: new Adapter() });
 
 const priority = [{value:1, label:'Error'}];
-const messages =[{messages:'error message'},{messages:'another error message'}];
+const messages =[{message:'error message'},{message:'another error message'}];
 describe('Column component', () => {
   test('renders error messages', () => {
     const tree = renderer.create(<Column priority={priority} messages={messages} />);

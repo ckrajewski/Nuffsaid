@@ -7,7 +7,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "update-snapShots": "react-scripts test --updateSnapshot ./src/__tests__/MessageGrid.test.js",
     "test-debug": "react-scripts --inspect-brk test --env=jsdom --runInBand --no-cache",
     "formatJS": "./node_modules/.bin/eslint --fix src/components/*.js"
   },

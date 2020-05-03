@@ -39,7 +39,9 @@ exports[`Column component renders error messages 1`] = `
         >
           <p
             className="MuiTypography-root MuiTypography-body1"
-          />
+          >
+            error message
+          </p>
         </div>
         <div
           className="MuiGrid-root makeStyles-clear-35 MuiGrid-item"
@@ -89,7 +91,9 @@ exports[`Column component renders error messages 1`] = `
         >
           <p
             className="MuiTypography-root MuiTypography-body1"
-          />
+          >
+            another error message
+          </p>
         </div>
         <div
           className="MuiGrid-root makeStyles-clear-35 MuiGrid-item"
