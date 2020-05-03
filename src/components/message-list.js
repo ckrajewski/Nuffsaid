@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { Typography } from '@material-ui/core';
@@ -32,18 +32,28 @@ const useStyles = makeStyles({
     borderColor: grey[500],
   },
 });
-let clickClear;
+
+/**
+* MessageList component is responsible for rendering the App
+* references the imported Api, and is initialized
+*/
 export default function MessageList() {
-  const [message, setMessage] = React.useState(null);
-  const [isApiStarted, setIsApiStarted] = React.useState(true);
-  const [api] = React.useState(new Api({
+  const [message, setMessage] = useState(null);
+  const [isApiStarted, setIsApiStarted] = useState(true);
+  const [api] = useState(new Api({
     messageCallback: (message) => {
       setMessage(message);
     },
   }));
-  React.useEffect(() => {
+  useEffect(() => {
     api.start();
   }, [api]);
+  /**
+   * used to handle clear functionality. Variable later points to
+   * the higher order function clearMessages which calls handleClearAll in MessageGrid
+   * in order to clear the state of sorted messages
+  */
+  const clickClear = useRef();
 
   const handleApiButton = () => {
     if (isApiStarted) {
@@ -65,24 +75,35 @@ export default function MessageList() {
               <Button
                 variant="contained"
                 className={classes.button}
-                onClick={handleApiButton}>
+                onClick={handleApiButton}
+              >
                 <Typography variant="body1" className={classes.buttonFont}>
                   {isApiStarted ? 'Stop' : 'Start'}
                 </Typography>
               </Button>
             </Grid>
             <Grid item>
+              { /*
+                * fires clickClear method, which is assigned to handleClearAll below
+                * when Message Grid is called
+                */
+              }
               <Button
                 className={classes.button}
                 variant="contained"
-                onClick={() => clickClear()}>
+                onClick={() => clickClear.current()}
+              >
                 <Typography variant="body1" className={classes.buttonFont}>
                   Clear
                 </Typography>
               </Button>
             </Grid>
           </Grid>
-          {message ? (<MessageGrid setClear={(click) => { clickClear = click; }} message={message} priorities={[{ label: 'Error', value: 1 }, { label: 'Warning', value: 2 }, { label: 'Info', value: 3 }]} />) : null }
+          { /*
+            * initalizes clickClear to point to handleClearAll in MessageGrid
+            */
+          }
+          {message ? (<MessageGrid setClear={(handleClearAll) => { clickClear.current = handleClearAll; }} message={message} priorities={[{ label: 'Error', value: 1 }, { label: 'Warning', value: 2 }, { label: 'Info', value: 3 }]} />) : null }
         </div>
       </div>
     </div>

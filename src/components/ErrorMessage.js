@@ -25,18 +25,35 @@ const useStyles = makeStyles({
     height: '100%',
   },
 });
-
+/**
+  * ErrorMessage component renders the snack bar that appears at the top
+  * when error messages come in
+*/
 export default function ErrorMessage(props) {
   const [errorObj, setErrorObj] = useState({ timeOutId: null, errorMessage: null });
   const { errorMessage, timeOutId } = errorObj;
   const { message } = props;
+
+  /**
+   * clears error message after user clicks icon
+  */
   const clearMessage = (event) => {
     event.stopPropagation();
+    clearTimeout(timeOutId);
     setErrorObj({ timeOutId: null, errorMessage: null });
   };
+  /**
+   * clears error message after a default value of two seconds
+  */
   const showErrorForTwoSeconds = () => (setTimeout(() => {
     setErrorObj({ timeOutId: null, errorMessage: null });
   }, 2000));
+
+  /**
+  * everytime a new message comes in, add its an error
+  * set the errorMessage and timOutId. Clear Timeout if new message comes
+  * and it has not been cleared yet
+  */
   useEffect(() => {
     if (message) {
       const { priority } = message;
@@ -55,12 +72,14 @@ export default function ErrorMessage(props) {
     <div className={classes.container} style={{ visibility: errorMessage ? 'initial' : 'hidden' }}>
       <Paper
         elevation={5}
-        className={classes.paper}>
+        className={classes.paper}
+      >
         <Grid
           container
           direction="row"
           alignItems="center"
-          className={classes.grid}>
+          className={classes.grid}
+        >
           <Grid item>
             <IconButton onClick={clearMessage}>
               <CloseIcon />

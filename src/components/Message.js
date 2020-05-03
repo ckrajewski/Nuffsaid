@@ -1,9 +1,9 @@
 import React from 'react';
-import { messageThemes } from '../utils';
 import {
   Typography, Paper, Grid, Button,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { messageThemes } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+/**
+  * Message component renders each message
+  * Corresponding messages are rendered for each given prioirty
+*/
 export default function Message(props) {
   const { message, priority, clearMessage } = props;
   const handleClearMessage = (event) => {
