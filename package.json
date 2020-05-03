@@ -7,6 +7,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "update-snapShots": "react-scripts test --updateSnapshot ./src/__tests__/MessageGrid.test.js",
+    "test-debug": "react-scripts --inspect-brk test --env=jsdom --runInBand --no-cache",
     "formatJS": "./node_modules/.bin/eslint --fix src/components/*.js"
   },
   "author": "Help.com",
@@ -23,7 +25,8 @@
     "prop-types": "^15.5.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "react-test-renderer": "^16.8.6"
   },
   "devDependencies": {},
   "browserslist": {

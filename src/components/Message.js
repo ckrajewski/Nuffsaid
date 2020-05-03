@@ -1,4 +1,5 @@
 import React from 'react';
+import { messageThemes } from '../utils';
 import {
   Typography, Paper, Grid, Button,
 } from '@material-ui/core';
@@ -30,11 +31,6 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
   },
 }));
-const messageThemes = {
-  1: '#F56236',
-  2: '#FCE788',
-  3: '#88FCA3',
-};
 
 export default function Message(props) {
   const { message, priority, clearMessage } = props;

@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessage component does not renders without error message 1`] = `
+<div
+  className="makeStyles-container-2"
+  style={
+    Object {
+      "visibility": "hidden",
+    }
+  }
+>
+  <div
+    className="MuiPaper-root makeStyles-paper-1 MuiPaper-elevation5 MuiPaper-rounded"
+  >
+    <div
+      className="MuiGrid-root makeStyles-grid-5 MuiGrid-container MuiGrid-align-items-xs-center"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item"
+      >
+        <button
+          className="MuiButtonBase-root MuiIconButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ErrorMessage component renders with error 1`] = `
+<div
+  className="makeStyles-container-2"
+  style={
+    Object {
+      "visibility": "hidden",
+    }
+  }
+>
+  <div
+    className="MuiPaper-root makeStyles-paper-1 MuiPaper-elevation5 MuiPaper-rounded"
+  >
+    <div
+      className="MuiGrid-root makeStyles-grid-5 MuiGrid-container MuiGrid-align-items-xs-center"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item"
+      >
+        <button
+          className="MuiButtonBase-root MuiIconButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item"
+      />
+    </div>
+  </div>
+</div>
+`;

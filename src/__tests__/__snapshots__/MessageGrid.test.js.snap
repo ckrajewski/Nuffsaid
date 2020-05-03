@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageGrid component renders with default values 1`] = `
+<div>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+    >
+      <div>
+        <div>
+          <div>
+            <h6
+              className="MuiTypography-root MuiTypography-h6"
+            >
+              Error
+               
+              Type
+               
+              1
+            </h6>
+          </div>
+          <div>
+            <p
+              className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+            >
+              Count
+               
+              0
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+    >
+      <div>
+        <div>
+          <div>
+            <h6
+              className="MuiTypography-root MuiTypography-h6"
+            >
+              Warning
+               
+              Type
+               
+              2
+            </h6>
+          </div>
+          <div>
+            <p
+              className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+            >
+              Count
+               
+              0
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MessageGrid component test new incoming message 1`] = `
+<div>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+    >
+      <div>
+        <div>
+          <div>
+            <h6
+              className="MuiTypography-root MuiTypography-h6"
+            >
+              Error
+               
+              Type
+               
+              1
+            </h6>
+          </div>
+          <div>
+            <p
+              className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+            >
+              Count
+               
+              0
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+    >
+      <div>
+        <div>
+          <div>
+            <h6
+              className="MuiTypography-root MuiTypography-h6"
+            >
+              Warning
+               
+              Type
+               
+              2
+            </h6>
+          </div>
+          <div>
+            <p
+              className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+            >
+              Count
+               
+              0
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MessageGrid component test new message 1`] = `
+<div>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+    >
+      <div>
+        <div>
+          <div>
+            <h6
+              className="MuiTypography-root MuiTypography-h6"
+            >
+              Error
+               
+              Type
+               
+              1
+            </h6>
+          </div>
+          <div>
+            <p
+              className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+            >
+              Count
+               
+              0
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+    >
+      <div>
+        <div>
+          <div>
+            <h6
+              className="MuiTypography-root MuiTypography-h6"
+            >
+              Warning
+               
+              Type
+               
+              2
+            </h6>
+          </div>
+          <div>
+            <p
+              className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+            >
+              Count
+               
+              0
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
