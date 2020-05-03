@@ -39,11 +39,11 @@ To take a close look at the front end code (React) feel free to use any text edi
 - [x] used React hooks
 - [x] wrote some Jest tests using snapshots
 - [x] Messages rendered in a table-like structure. The newest messages appear at the top of their respective columns.
--[x] Messages color-coded depending on the priority of the message. see [utils.js](./src/utils.js)
--[x] Each time a message with the priority level of error is received, a snackbar containing the error message appears at the top of the application. The error disappears:
- - in 2 seconds
- - when another error message takes its place
- - when the user clears it via the provided button within in the 
+- [x] Messages color-coded depending on the priority of the message. see [utils.js](./src/utils.js)
+- [x] Each time a message with the priority level of error is received, a snackbar containing the error message appears at the top of the application. The error disappears:
+  - in 2 seconds
+  - when another error message takes its place
+  - when the user clears it via the provided button within in the 
     error message.
 - [x] A user can clear all messages at any point.
 - [x]  A user can clear a specific message in a specific column
