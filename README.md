@@ -67,7 +67,7 @@ In case you have any comments, questions, bugs, enhancements feel free to open a
 
 ### Cleared State
 
-![Cleared State](./screenshots/Nuffsaid_ClearAll.png)
+![Cleared State](./screenshots/Nuffsaid_ClearsdAll.png)
 
 ### Error Message Snack Bar Ontop of Screen
 ![ Error Message Snack Bar](./screenshots/Nuffsaid_ErrorMessage.png)
