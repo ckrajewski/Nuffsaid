@@ -18,10 +18,7 @@ Open a terminal and cd into the `Nuffsaid` folder. Then:
 1. `npm install`
 2. `npm start` 
 
-Your default browser should automatically open and redirect you to `http://localhost:3000` where the website will be running!
-
-It may open the tab before everything is loaded, but that's OK. After waiting for a bit, it should load :)
-
+Open a tab in your browser and navigate to `http://localhost:3000` where the website will be running!
 
 ## Running Tests
 
