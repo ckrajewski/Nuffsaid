@@ -7,18 +7,14 @@ exports[`Column component renders error messages 1`] = `
       <h6
         className="MuiTypography-root MuiTypography-h6"
       >
-         
-        Type
-         
+        undefined Type undefined
       </h6>
     </div>
     <div>
       <p
         className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
       >
-        Count
-         
-        2
+        Count 2
       </p>
     </div>
   </div>

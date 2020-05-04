@@ -12,21 +12,14 @@ export default function ColumnTitle(props) {
     <div>
       <div>
         <Typography variant="h6">
-          {priorityLabel}
-          {' '}
-          Type
-          {' '}
-          {priorityValue}
+          {`${priorityLabel} Type ${priorityValue}`}
         </Typography>
       </div>
       <div>
         <Typography variant="body1" gutterBottom>
-          Count
-          {' '}
-          {messageCount}
+          {`Count ${messageCount}`}
         </Typography>
       </div>
-
     </div>
   );
 }

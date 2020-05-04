@@ -15,7 +15,7 @@ describe('MessageGrid component', () => {
     .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('test new incoming message', () => {
+  test('new incoming message', () => {
     const wrapper = shallow(<MessageGrid message={message} priorities={priorities} setClear={setClear} />);
     const updatedMessage ={priority: 2, messages:'warning message'};
     wrapper.setProps({message:updatedMessage});

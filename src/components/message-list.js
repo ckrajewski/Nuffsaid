@@ -90,7 +90,7 @@ export default function MessageList() {
                   </Button>
                 </Grid>
                 <Grid item>
-                  { /*
+                  { /**
                     * fires clickClear method, which is assigned to handleClearAll below
                     * when Message Grid is called
                     */
@@ -108,7 +108,7 @@ export default function MessageList() {
             </Grid>
             <Grid item xs={4} />
           </Grid>
-          { /*
+          { /**
             * initalizes clickClear to point to handleClearAll in MessageGrid
             */
           }

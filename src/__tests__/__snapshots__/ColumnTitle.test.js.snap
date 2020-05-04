@@ -6,20 +6,14 @@ exports[`ColumnTitle component renders 1`] = `
     <h6
       className="MuiTypography-root MuiTypography-h6"
     >
-      Error
-       
-      Type
-       
-      1
+      Error Type 1
     </h6>
   </div>
   <div>
     <p
       className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
     >
-      Count
-       
-      1
+      Count 1
     </p>
   </div>
 </div>
