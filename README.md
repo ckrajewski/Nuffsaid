@@ -74,4 +74,4 @@ In case you have any comments, questions, bugs, enhancements feel free to open a
 
 ### Screen with No Messages Coming In  (Stopped) 
 
-![No Messages Coming In](./screenshots/Nuffsaid/StoppedMessages.png)
+![No Messages Coming In](./screenshots/Nuffsaid_StoppedMessages.png)
