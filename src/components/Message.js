@@ -50,14 +50,12 @@ export default function Message(props) {
       <Paper
         elevation={5}
         className={classes.paper}
-        style={{ backgroundColor: messageThemes[priority] }}
-      >
+        style={{ backgroundColor: messageThemes[priority] }}>
         <Grid
           container
           direction="row"
           justify="space-between"
-          className={classes.grid}
-        >
+          className={classes.grid}>
           <Grid item className={classes.message}>
             <Typography variant="body1">
               {message}

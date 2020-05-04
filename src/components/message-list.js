@@ -12,6 +12,11 @@ const useStyles = makeStyles({
   button: {
     backgroundColor: '#88FCA3',
     lineHeight: '2rem',
+    '&:hover': {
+      backgroundColor: '#4CFCA3',
+      borderColor: '#4CFCA3',
+      boxShadow: 'none',
+    },
   },
   buttonFont: {
     textTransform: 'uppercase',
@@ -70,34 +75,38 @@ export default function MessageList() {
       <ErrorMessage message={message} />
       <div className={classes.header}>
         <div className={classes.container}>
-          <Grid container spacing={3} justify="center" className={classes.buttonContainer}>
-            <Grid item>
-              <Button
-                variant="contained"
-                className={classes.button}
-                onClick={handleApiButton}
-              >
-                <Typography variant="body1" className={classes.buttonFont}>
-                  {isApiStarted ? 'Stop' : 'Start'}
-                </Typography>
-              </Button>
+          <Grid container spacing={2}>
+            <Grid item xs={4} />
+            <Grid item xs={4}>
+              <Grid container spacing={2} className={classes.buttonContainer}>
+                <Grid item>
+                  <Button
+                    variant="contained"
+                    className={classes.button}
+                    onClick={handleApiButton}>
+                    <Typography variant="body1" className={classes.buttonFont}>
+                      {isApiStarted ? 'Stop' : 'Start'}
+                    </Typography>
+                  </Button>
+                </Grid>
+                <Grid item>
+                  { /*
+                    * fires clickClear method, which is assigned to handleClearAll below
+                    * when Message Grid is called
+                    */
+                  }
+                  <Button
+                    className={classes.button}
+                    variant="contained"
+                    onClick={() => clickClear.current()}>
+                    <Typography variant="body1" className={classes.buttonFont}>
+                      Clear
+                    </Typography>
+                  </Button>
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid item>
-              { /*
-                * fires clickClear method, which is assigned to handleClearAll below
-                * when Message Grid is called
-                */
-              }
-              <Button
-                className={classes.button}
-                variant="contained"
-                onClick={() => clickClear.current()}
-              >
-                <Typography variant="body1" className={classes.buttonFont}>
-                  Clear
-                </Typography>
-              </Button>
-            </Grid>
+            <Grid item xs={4} />
           </Grid>
           { /*
             * initalizes clickClear to point to handleClearAll in MessageGrid

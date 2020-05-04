@@ -63,15 +63,15 @@ In case you have any comments, questions, bugs, enhancements feel free to open a
 
 ### Screen with Messages Coming In
 
-![SelectScreen](./screenshots/Select.png)
+![Messages Coming In](./screenshots/Nuffsaid_IncomingMessages.png)
 
 ### Cleared State
 
-![No Images Found Screen](./screenshots/NoImagesFound.png)
+![Cleared State](./screenshots/Nuffsaid_ClearAll.png)
 
 ### Error Message Snack Bar Ontop of Screen
-![Loading Screen](./screenshots/Loading.png)
+![ Error Message Snack Bar](./screenshots/Nuffsaid_ErrorMessage.png)
 
 ### Screen with No Messages Coming In  (Stopped) 
 
-![Images Returned Screen](./screenshots/ImagesReturned.png)
+![No Messages Coming In](./screenshots/Nuffsaid/StoppedMessages.png)
