@@ -40,7 +40,7 @@ const useStyles = makeStyles({
 
 /**
 * MessageList component is responsible for rendering the App
-* references the imported Api, and is initialized
+* references the imported Api, and initializes it in state
 */
 export default function MessageList() {
   const [message, setMessage] = useState(null);
