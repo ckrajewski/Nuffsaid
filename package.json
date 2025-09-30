@@ -20,7 +20,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "prop-types": "^15.5.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
